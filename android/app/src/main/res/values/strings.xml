@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MarketplaceID</string>
+    <string name="title_activity_main">MarketplaceID</string>
+    <string name="package_name">com.marketplaceid.app</string>
+    <string name="custom_url_scheme">com.marketplaceid.app</string>
+</resources>

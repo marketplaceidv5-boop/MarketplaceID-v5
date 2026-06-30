@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Edit Produk</title>
+
+<link rel="stylesheet" href="/public/css/style.css">
+<link rel="stylesheet" href="/public/css/product.css">
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="javascript:history.back()">⬅️</a>
+<h2>Edit Produk</h2>
+<div></div>
+</div>
+
+<div class="container" style="padding-top:75px">
+
+<input id="title" placeholder="Judul">
+
+<textarea
+id="description"
+placeholder="Deskripsi">
+</textarea>
+
+<input
+id="price"
+type="number"
+placeholder="Harga">
+
+<input
+id="oldPrice"
+type="number"
+placeholder="Harga Coret">
+
+<input
+id="location"
+placeholder="Lokasi">
+
+<label>Foto Baru (Opsional)</label>
+
+<input
+id="images"
+type="file"
+accept="image/*"
+multiple>
+
+<button
+class="btn"
+onclick="saveProduct()">
+
+Simpan Perubahan
+
+</button>
+
+</div>
+
+<script src="/public/js/api.js"></script>
+<script src="/public/js/edit-product.js"></script>
+
+</body>
+</html>

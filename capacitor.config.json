@@ -1,0 +1,9 @@
+{
+  "appId": "com.marketplaceid.app",
+  "appName": "MarketplaceID",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

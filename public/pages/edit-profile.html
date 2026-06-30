@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Edit Profil</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/profile.css">
+<link rel="stylesheet" href="../css/animation.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<a href="profile.html">
+
+⬅️
+
+</a>
+
+<h2>Edit Profil</h2>
+
+<div></div>
+
+</div>
+
+<div
+class="container"
+style="padding-top:75px;padding-bottom:90px;">
+
+<div class="profile-card">
+
+<img
+id="avatarPreview"
+class="profile-avatar"
+src="../assets/default/avatar.png">
+
+<input
+type="file"
+id="avatar"
+accept="image/*">
+
+</div>
+
+<input
+type="text"
+id="username"
+placeholder="Username">
+
+<input
+type="email"
+id="email"
+placeholder="Email">
+
+<input
+type="text"
+id="location"
+placeholder="Lokasi">
+
+<input
+type="password"
+id="oldPassword"
+placeholder="Password Lama">
+
+<input
+type="password"
+id="newPassword"
+placeholder="Password Baru">
+
+<button
+class="btn"
+onclick="saveProfile()">
+
+Simpan Perubahan
+
+</button>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/edit-profile.js"></script>
+
+</body>
+
+</html>

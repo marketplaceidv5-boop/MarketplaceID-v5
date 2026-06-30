@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Verifikasi Akun</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+<link rel="stylesheet"
+href="../css/animation.css">
+
+<link rel="stylesheet"
+href="../css/profile.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<a href="profile.html">
+
+⬅️
+
+</a>
+
+<h2>Verifikasi Akun</h2>
+
+<div></div>
+
+</div>
+
+<div class="container"
+style="padding-top:75px;padding-bottom:90px;">
+
+<div class="card">
+
+<h3>
+
+Verifikasi Identitas
+
+</h3>
+
+<p>
+
+Upload identitas agar akun menjadi Verified Seller.
+
+</p>
+
+</div>
+
+<label>Nama Lengkap</label>
+
+<input
+type="text"
+id="fullname">
+
+<label>Nomor KTP</label>
+
+<input
+type="text"
+id="nik">
+
+<label>Foto KTP</label>
+
+<input
+type="file"
+id="ktp"
+accept="image/*">
+
+<label>Selfie dengan KTP</label>
+
+<input
+type="file"
+id="selfie"
+accept="image/*">
+
+<label>Foto Wajah</label>
+
+<input
+type="file"
+id="photo"
+accept="image/*">
+
+<button
+class="btn"
+onclick="submitVerification()">
+
+Kirim Verifikasi
+
+</button>
+
+<div
+id="verificationStatus"
+style="margin-top:20px;">
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+
+<script src="../js/verification.js"></script>
+
+</body>
+
+</html>

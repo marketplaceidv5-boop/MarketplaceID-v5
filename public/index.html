@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>MarketplaceID</title>
+
+<link
+rel="stylesheet"
+href="/public/css/style.css">
+
+<link
+rel="stylesheet"
+href="/public/css/animation.css">
+
+<link
+rel="manifest"
+href="/public/manifest.json">
+
+<meta
+name="theme-color"
+content="#16a34a">
+
+</head>
+
+<body>
+
+<div id="app">
+
+<div class="loading-screen">
+
+<div class="logo-box">
+
+<img
+src="/public/assets/logo/logo.png"
+class="logo">
+
+<h1>MarketplaceID</h1>
+
+<p>Marketplace Barang Bekas Indonesia</p>
+
+</div>
+
+<div class="loader"></div>
+
+</div>
+
+</div>
+
+<script src="/public/js/api.js"></script>
+
+<script src="/public/js/helper.js"></script>
+
+<script src="/public/js/app.js"></script>
+
+<script>
+
+async function start(){
+
+try{
+
+const res=
+await fetch(
+"/api/me",
+{
+credentials:"include"
+}
+);
+
+const data=
+await res.json();
+
+if(
+
+data.success
+
+){
+
+location.href=
+"/public/pages/home.html";
+
+}else{
+
+location.href=
+"/public/pages/login.html";
+
+}
+
+}catch(e){
+
+location.href=
+"/public/pages/login.html";
+
+}
+
+}
+
+setTimeout(
+
+start,
+
+1800
+
+);
+
+</script>
+
+<script>
+
+if("serviceWorker" in navigator){
+
+navigator.serviceWorker.register(
+
+"/public/service-worker.js"
+
+);
+
+}
+
+</script>
+
+</body>
+
+</html>

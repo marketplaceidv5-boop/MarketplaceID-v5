@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Profil Penjual</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/profile.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/animation.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<a href="javascript:history.back()">
+
+⬅️
+
+</a>
+
+<h2>Profil Penjual</h2>
+
+<div></div>
+
+</div>
+
+<div
+class="container"
+style="padding-top:75px;padding-bottom:90px;">
+
+<div class="profile-card">
+
+<img
+id="sellerAvatar"
+class="profile-avatar"
+src="../assets/default/avatar.png">
+
+<h2 id="sellerName">
+
+Loading...
+
+</h2>
+
+<div id="sellerVerified"></div>
+
+<p id="sellerLocation"></p>
+
+<p id="sellerJoinDate"></p>
+
+</div>
+
+<div class="stats">
+
+<div>
+
+<h2 id="sellerProducts">
+
+0
+
+</h2>
+
+<p>Produk</p>
+
+</div>
+
+<div>
+
+<h2 id="sellerSold">
+
+0
+
+</h2>
+
+<p>Terjual</p>
+
+</div>
+
+<div>
+
+<h2 id="sellerRating">
+
+0⭐
+
+</h2>
+
+<p>Rating</p>
+
+</div>
+
+</div>
+
+<div
+class="action-buttons">
+
+<button
+class="btn"
+
+onclick="followSeller()">
+
+❤️ Follow
+
+</button>
+
+<button
+class="btn-secondary"
+
+onclick="chatSeller()">
+
+💬 Chat
+
+</button>
+
+</div>
+
+<h3>
+
+Produk Penjual
+
+</h3>
+
+<div
+id="sellerProductsList"
+class="grid">
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/seller.js"></script>
+
+</body>
+
+</html>

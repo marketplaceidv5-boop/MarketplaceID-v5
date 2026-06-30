@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MarketplaceID</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animation.css">
+
+<style>
+
+body{
+
+background:linear-gradient(
+135deg,
+#16a34a,
+#22c55e
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+overflow:hidden;
+
+}
+
+.splash{
+
+text-align:center;
+
+color:white;
+
+animation:fadeIn .8s;
+
+}
+
+.splash img{
+
+width:140px;
+
+height:140px;
+
+border-radius:30px;
+
+background:white;
+
+padding:18px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+margin-bottom:20px;
+
+}
+
+.splash h1{
+
+font-size:34px;
+
+margin-bottom:8px;
+
+}
+
+.splash p{
+
+opacity:.9;
+
+font-size:16px;
+
+}
+
+.version{
+
+margin-top:35px;
+
+font-size:14px;
+
+opacity:.8;
+
+}
+
+.loader{
+
+margin:auto;
+
+margin-top:35px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="splash">
+
+<img
+src="../assets/logo/logo.png"
+class="pulse">
+
+<h1>MarketplaceID</h1>
+
+<p>
+Jual • Beli • COD Aman
+</p>
+
+<div class="loader"></div>
+
+<div class="version">
+
+Version 4.0
+
+</div>
+
+</div>
+
+<script>
+
+setTimeout(()=>{
+
+location.href="login.html";
+
+},2500);
+
+</script>
+
+</body>
+
+</html>

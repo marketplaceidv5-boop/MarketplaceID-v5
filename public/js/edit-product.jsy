@@ -1,0 +1,59 @@
+const id = new URLSearchParams(location.search).get("id");
+
+async function loadProduct(){
+
+const result = await GET("/products/"+id);
+
+if(!result.success){
+
+alert("Produk tidak ditemukan");
+
+history.back();
+
+return;
+
+}
+
+const p = result.product;
+
+title.value = p.title;
+description.value = p.description;
+category.value = p.category;
+price.value = p.price;
+oldPrice.value = p.old_price;
+location.value = p.location;
+
+}
+
+async function saveProduct(){
+
+alert("saveProduct dipanggil");
+
+const data = {
+title: title.value,
+description: description.value,
+price: price.value,
+oldPrice: oldPrice.value,
+location: location.value
+};
+
+console.log(data);
+
+const result = await PUT("/products/"+id,data);
+
+console.log(result);
+
+if(result.success){
+
+alert("Produk berhasil diupdate");
+location.href="my-products.html";
+
+}else{
+
+alert(result.message || "Gagal");
+
+}
+
+}
+
+loadProduct();

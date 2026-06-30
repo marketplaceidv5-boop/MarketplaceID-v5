@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>MarketplaceID</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/animation.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+<div class="logo-area">
+
+<img
+src="../assets/banner/banner1.png">
+class="nav-logo">
+
+<h2>MarketplaceID</h2>
+
+</div>
+
+<div class="nav-action">
+
+<span
+id="notificationBadge"
+class="badge hidden">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+<!-- Search -->
+
+<div class="container">
+
+<div class="search-box">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Cari barang..."
+
+onkeyup="searchProduct()">
+
+</div>
+
+<!-- Banner -->
+
+<div class="banner">
+    <img src="../assets/banner/banner1.png">
+</div>
+
+<!-- Category -->
+
+<div class="category-scroll">
+
+<button onclick="loadCategory('Elektronik')">
+
+Elektronik
+
+</button>
+
+<button onclick="loadCategory('Motor')">
+
+Motor
+
+</button>
+
+<button onclick="loadCategory('Mobil')">
+
+Mobil
+
+</button>
+
+<button onclick="loadCategory('Rumah')">
+
+Rumah
+
+</button>
+
+<button onclick="loadCategory('Fashion')">
+
+Fashion
+
+</button>
+
+<button onclick="loadCategory('Gaming')">
+
+Gaming
+
+</button>
+
+<button onclick="loadCategory('Lainnya')">
+
+Lainnya
+
+</button>
+
+</div>
+
+<h3>
+
+🔥 Rekomendasi
+
+</h3>
+
+<div
+id="recommendProducts"
+class="grid">
+
+</div>
+
+<h3>
+
+🆕 Produk Terbaru
+
+</h3>
+
+<div
+id="latestProducts"
+class="grid">
+
+</div>
+
+</div>
+
+<!-- Bottom Navigation -->
+
+<div class="bottom-nav">
+
+<a
+class="active"
+href="home.html">
+
+🏠
+
+<br>
+
+Home
+
+</a>
+
+<a
+href="favorites.html">
+
+❤️
+
+<br>
+
+Favorit
+
+</a>
+
+<a
+href="upload.html">
+
+➕
+
+<br>
+
+Jual
+
+</a>
+
+<a
+href="inbox.html">
+
+💬
+
+<br>
+
+Chat
+
+</a>
+
+<a
+href="profile.html">
+
+👤
+
+<br>
+
+Profil
+
+</a>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/helper.js"></script>
+<script src="../js/home.js"></script>
+
+</body>
+
+</html>

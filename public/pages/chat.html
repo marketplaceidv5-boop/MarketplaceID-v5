@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Chat</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/chat.css">
+<link rel="stylesheet" href="../css/animation.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<a href="inbox.html">
+
+⬅️
+
+</a>
+
+<div id="chatUser">
+
+Loading...
+
+</div>
+
+<div id="typing">
+
+</div>
+
+</div>
+
+<div
+id="chatBox"
+class="chat-box">
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="file"
+id="image"
+accept="image/*"
+hidden>
+
+<button
+onclick="document.getElementById('image').click()">
+
+📷
+
+</button>
+
+<input
+type="text"
+id="message"
+placeholder="Tulis pesan...">
+
+<button
+onclick="sendMessage()">
+
+➤
+
+</button>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/chat.js"></script>
+
+</body>
+
+</html>

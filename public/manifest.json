@@ -1,0 +1,22 @@
+{
+  "name": "MarketplaceID",
+  "short_name": "MarketplaceID",
+  "description": "Marketplace Barang Bekas Indonesia",
+  "start_url": "/public/index.html",
+  "display": "standalone",
+  "background_color": "#16a34a",
+  "theme_color": "#16a34a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/public/assets/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/public/assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

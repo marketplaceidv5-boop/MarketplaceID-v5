@@ -1,0 +1,55 @@
+.admin-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-bottom:20px;
+
+}
+
+.admin-grid a{
+
+background:white;
+
+padding:20px;
+
+border-radius:18px;
+
+text-align:center;
+
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.admin-grid h3{
+
+margin:10px 0;
+
+font-size:18px;
+
+}
+
+.admin-grid p{
+
+font-size:13px;
+
+color:#666;
+
+}
+
+.admin-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:18px;
+
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+margin-bottom:15px;
+
+}

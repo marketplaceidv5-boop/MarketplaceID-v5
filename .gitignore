@@ -1,0 +1,74 @@
+# ==========================
+# ENV
+# ==========================
+
+.env
+
+# ==========================
+# NODE
+# ==========================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================
+# LOGS
+# ==========================
+
+logs/
+*.log
+
+# ==========================
+# CACHE
+# ==========================
+
+.cache/
+.tmp/
+temp/
+
+# ==========================
+# OS
+# ==========================
+
+.DS_Store
+Thumbs.db
+
+# ==========================
+# IDE
+# ==========================
+
+.vscode/
+.idea/
+
+# ==========================
+# UPLOADS
+# (jangan upload file user)
+# ==========================
+
+uploads/products/*
+uploads/profiles/*
+uploads/chat/*
+uploads/verifications/*
+uploads/temp/*
+
+# Tetap simpan foldernya
+!uploads/products/.gitkeep
+!uploads/profiles/.gitkeep
+!uploads/chat/.gitkeep
+!uploads/verifications/.gitkeep
+!uploads/temp/.gitkeep
+
+# ==========================
+# PM2
+# ==========================
+
+.pm2/
+
+# ==========================
+# TEST
+# ==========================
+
+coverage/
