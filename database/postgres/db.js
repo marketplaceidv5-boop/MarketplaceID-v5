@@ -5,12 +5,14 @@ const { Pool } = require("pg");
 const isProduction =
 process.env.NODE_ENV === "production";
 
-const pool = new Pool({
-
 console.log(
   "DB URL =",
-  process.env.DATABASE_URL?.replace(/:\/\/.*@/, "://****@")
+  process.env.DATABASE_URL
+    ? process.env.DATABASE_URL.replace(/:\/\/.*@/, "://****@")
+    : "TIDAK ADA"
 );
+
+const pool = new Pool({
 
   connectionString:
   process.env.DATABASE_URL,
