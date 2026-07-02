@@ -1932,82 +1932,57 @@ success:false
 
 app.post(
 "/api/chat/send",
-
 requireLogin,
-
 uploadChat.single("image"),
+async (req, res) => {
 
-async(req,res)=>{
-
-try{
+try {
 
 console.log("=== CHAT DEBUG ===");
 console.log("BODY:", req.body);
 console.log("SESSION USER:", req.session.userId);
 console.log("FILE:", req.file ? req.file.originalname : "TIDAK ADA");
 
-const image=req.file
-?"/uploads/chat/"+req.file.filename
-:"";
+const image = req.file
+  ? "/uploads/chat/" + req.file.filename
+  : "";
 
-const chat=
-await chatDB.sendMessage({
-
-productId:req.body.productId||null,
-
-fromUserId:req.session.userId,
-
-toUserId:req.body.toUserId,
-
-message:req.body.message||"",
-
-image
-
+const chat = await chatDB.sendMessage({
+  productId: req.body.productId || null,
+  fromUserId: req.session.userId,
+  toUserId: req.body.toUserId,
+  message: req.body.message || "",
+  image
 });
 
-if(req.body.toUserId){
-
-await notificationDB.createNotification({
-
-userId:req.body.toUserId,
-
-fromUserId:req.session.userId,
-
-productId:req.body.productId||null,
-
-type:"chat",
-
-title:"Pesan Baru",
-
-message:req.body.message||"Mengirim gambar"
-
-});
-
+if (req.body.toUserId) {
+  await notificationDB.createNotification({
+    userId: req.body.toUserId,
+    fromUserId: req.session.userId,
+    productId: req.body.productId || null,
+    type: "chat",
+    title: "Pesan Baru",
+    message: req.body.message || "Mengirim gambar"
+  });
 }
 
 res.json({
-
-success:true,
-
-chat
-
+  success: true,
+  chat
 });
 
-}catch(err){
+} catch (err) {
 
 console.log(err);
 
 res.status(500).json({
-
-success:false,
-
-message:err.message
-
+  success: false,
+  message: err.message
 });
 
 }
 
-);
+});
 
 /* =========================
    CHAT ROOM
