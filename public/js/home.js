@@ -120,7 +120,7 @@ result.products
 
 }
 
-async function loadCategory(category) {
+async function loadCategory(event, category) {
 
     currentCategory = category;
 
