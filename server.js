@@ -1941,10 +1941,6 @@ async(req,res)=>{
 
 try{
 
-async(req,res)=>{
-
-try{
-
 console.log("=== CHAT DEBUG ===");
 console.log("BODY:", req.body);
 console.log("SESSION USER:", req.session.userId);
