@@ -120,25 +120,29 @@ result.products
 
 }
 
-async function loadCategory(category){
+async function loadCategory(category) {
 
-const result=
+    currentCategory = category;
 
-await GET(
+    document.querySelectorAll(".category-scroll button").forEach(btn => {
+        btn.classList.remove("active");
+    });
 
-"/category/"+
+    event.target.classList.add("active");
 
-encodeURIComponent(category)
+    const result = await GET(
+        "/api/category/" + encodeURIComponent(category)
+    );
 
-);
+    renderProducts(
+        "recommendProducts",
+        result.products
+    );
 
-renderProducts(
-
-"latestProducts",
-
-result.products
-
-);
+    renderProducts(
+        "latestProducts",
+        result.products
+    );
 
 }
 

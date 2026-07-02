@@ -13,7 +13,7 @@ const cloudinary = require("./config/cloudinary");
 console.log("=== CLOUDINARY DEBUG ===");
 console.log("Cloud:", process.env.CLOUDINARY_CLOUD_NAME || "op5jn26s");
 console.log("Key:", process.env.CLOUDINARY_API_KEY || "198643764463655");
-console.log("Secret:", process.env.CLOUDINARY_API_SECRET ? "ADA" : "CLOUDINARY_URL=cloudinary://<your_api_key>:<your_api_secret>@op5jn26s");
+console.log("Secret:", process.env.CLOUDINARY_API_SECRET ? "ADA" : "1bsqIBY2X8FZQFukDHq-47La6iI");
 
 const streamifier = require("streamifier");
 const fs = require("fs-extra");
