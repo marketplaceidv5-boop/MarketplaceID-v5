@@ -1950,8 +1950,6 @@ console.log("BODY:", req.body);
 console.log("SESSION USER:", req.session.userId);
 console.log("FILE:", req.file ? req.file.originalname : "TIDAK ADA");
 
-const image = ...
-
 const image=req.file
 ?"/uploads/chat/"+req.file.filename
 :"";
