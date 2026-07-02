@@ -199,3 +199,40 @@ border-radius:12px;
 margin-top:5px;
 
 }
+
+.chat-message{
+    display:flex;
+    margin:10px;
+}
+
+.chat-message.me{
+    justify-content:flex-end;
+}
+
+.chat-message.other{
+    justify-content:flex-start;
+}
+
+.chat-message .bubble{
+    max-width:75%;
+    padding:12px 15px;
+    border-radius:18px;
+    word-break:break-word;
+}
+
+.chat-message.me .bubble{
+    background:#16a34a;
+    color:#fff;
+    border-bottom-right-radius:6px;
+}
+
+.chat-message.other .bubble{
+    background:#f1f1f1;
+    color:#222;
+    border-bottom-left-radius:6px;
+}
+
+.chat-image{
+    max-width:220px;
+    border-radius:12px;
+}

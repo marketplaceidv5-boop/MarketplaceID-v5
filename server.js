@@ -2018,6 +2018,8 @@ res.json({
 
 success:true,
 
+me: req.session.userId,
+
 messages
 
 });

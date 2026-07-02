@@ -20,6 +20,25 @@ return;
 
 }
 
+const userIdSaya = result.me;
+
+if(result.messages.length){
+
+    const first = result.messages[0];
+
+    const nama =
+        String(first.from_user_id) === String(userIdSaya)
+        ? first.to_username
+        : first.from_username;
+
+    document.getElementById("chatUser").textContent = nama;
+
+}else{
+
+    document.getElementById("chatUser").textContent = "Chat";
+
+}
+
 const box=
 
 document.getElementById("chatBox");
@@ -28,39 +47,22 @@ box.innerHTML="";
 
 result.messages.forEach(msg=>{
 
-const me=
+const me = String(msg.from_user_id) === String(userIdSaya);
 
-msg.from_user_id==result.me;
+box.innerHTML += `
+<div class="chat-message ${me ? "me" : "other"}">
 
-box.innerHTML+=`
+    ${msg.image ? `
+        <img class="chat-image" src="${msg.image}">
+    ` : ""}
 
-<div class="${
-me?"me":"other"
-}">
-
-${
-msg.message||""
-}
-
-${
-msg.image
-
-?
-
-`<br>
-
-<img
-class="chat-image"
-src="${msg.image}">`
-
-:
-
-""
-
-}
+    ${msg.message ? `
+        <div class="bubble">
+            ${msg.message}
+        </div>
+    ` : ""}
 
 </div>
-
 `;
 
 });
