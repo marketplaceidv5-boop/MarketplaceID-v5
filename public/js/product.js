@@ -2,6 +2,8 @@ const params=new URLSearchParams(location.search);
 
 const productId=params.get("id");
 
+let sellerId = null;
+
 async function loadProduct(){
 
 const result=
@@ -14,6 +16,8 @@ return;
 }
 
 const p=result.product;
+
+sellerId = p.seller_id;
 
 document.getElementById("product").innerHTML=`
 
@@ -181,13 +185,14 @@ alert("Produk ditambahkan ke favorit");
 
 function chatSeller(){
 
-location.href=
+if(!sellerId){
+    alert("Penjual tidak ditemukan");
+    return;
+}
 
-"chat.html?product="
-
-+
-
-productId;
+location.href =
+"chat.html?user=" + sellerId +
+"&product=" + productId;
 
 }
 
