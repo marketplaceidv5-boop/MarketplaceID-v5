@@ -131,7 +131,7 @@ async function loadCategory(event, category) {
     event.target.classList.add("active");
 
     const result = await GET(
-        "/api/category/" + encodeURIComponent(category)
+        "/category/" + encodeURIComponent(category)
     );
 
     renderProducts(
