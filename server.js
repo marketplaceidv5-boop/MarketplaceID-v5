@@ -9,6 +9,12 @@ const path = require("path");
 const bcrypt = require("bcryptjs");
 const multer = require("multer");
 const cloudinary = require("./config/cloudinary");
+
+console.log("=== CLOUDINARY DEBUG ===");
+console.log("Cloud:", process.env.CLOUDINARY_CLOUD_NAME || "KOSONG");
+console.log("Key:", process.env.CLOUDINARY_API_KEY || "KOSONG");
+console.log("Secret:", process.env.CLOUDINARY_API_SECRET ? "ADA" : "KOSONG");
+
 const streamifier = require("streamifier");
 const fs = require("fs-extra");
 
