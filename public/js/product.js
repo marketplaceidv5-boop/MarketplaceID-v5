@@ -8,8 +8,6 @@ function openSeller(){
 
 const productId=params.get("id");
 
-let sellerId = null;
-
 async function loadProduct(){
 
 const result=
