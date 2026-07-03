@@ -89,10 +89,10 @@ msg.message || ""
 
 });
 
-box.scrollTop=
-
-box.scrollHeight;
-
+box.scrollTo({
+    top: box.scrollHeight,
+    behavior: "smooth"
+});
 }
 
 async function sendMessage(){

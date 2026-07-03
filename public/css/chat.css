@@ -207,9 +207,9 @@ margin-top:5px;
 
 .chat-time{
     margin-top:4px;
-    font-size:11px;
+    font-size:10px;
     text-align:right;
-    opacity:.75;
+    opacity:.6;
 }
 
 .chat-message.me .chat-time{
@@ -218,4 +218,14 @@ margin-top:5px;
 
 .chat-message.other .chat-time{
     color:#777;
+}
+
+.chat-message a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.chat-message.other a{
+    color:#16a34a;
 }
