@@ -229,3 +229,15 @@ margin-top:5px;
 .chat-message.other a{
     color:#16a34a;
 }
+
+.chat-time{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:4px;
+}
+
+.chat-time{
+    font-size:10px;
+    opacity:.7;
+}

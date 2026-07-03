@@ -57,6 +57,11 @@ const waktu = new Date(msg.created_at).toLocaleTimeString(
     }
 );
 
+const status =
+me
+? (msg.read ? "✓✓" : "✓")
+: "";
+
 box.innerHTML += `
 <div class="chat-message ${me ? "me" : "other"}">
     <div class="bubble">
@@ -82,7 +87,7 @@ msg.message || ""
 }
 
    <div class="chat-time">
-        ${waktu}
+        ${waktu} ${status}
     </div>
 </div>
 `;
