@@ -207,21 +207,24 @@ margin-top:5px;
 
 .chat-message.me{
     justify-content:flex-end;
+    padding-right:8px;
 }
 
 .chat-message.other{
     justify-content:flex-start;
+    padding-left:8px;
 }
 
-.bubble{
+.chat-message .bubble{
     display:inline-block;
-    width:auto;
+    width:fit-content;
     max-width:70%;
     padding:10px 14px;
     border-radius:18px;
-    line-height:1.4;
     word-break:break-word;
-    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    line-height:1.4;
+    font-size:15px;
 }
 
 .chat-message.me .bubble{
@@ -231,15 +234,13 @@ margin-top:5px;
 }
 
 .chat-message.other .bubble{
-    background:#fff;
+    background:#ffffff;
     color:#222;
     border:1px solid #e5e5e5;
     border-bottom-left-radius:5px;
 }
 
 .chat-image{
-    display:block;
     max-width:220px;
     border-radius:12px;
-    margin-bottom:6px;
 }
