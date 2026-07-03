@@ -49,6 +49,14 @@ result.messages.forEach(msg=>{
 
 const me = String(msg.from_user_id) === String(userIdSaya);
 
+const waktu = new Date(msg.created_at).toLocaleTimeString(
+    "id-ID",
+    {
+        hour:"2-digit",
+        minute:"2-digit"
+    }
+);
+
 box.innerHTML += `
 <div class="chat-message ${me ? "me" : "other"}">
     <div class="bubble">
@@ -72,6 +80,9 @@ target="_blank">
 msg.message || ""
 
 }
+
+   <div class="chat-time">
+        ${waktu}
     </div>
 </div>
 `;

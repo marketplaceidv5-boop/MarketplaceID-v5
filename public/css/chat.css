@@ -204,3 +204,18 @@ margin-top:5px;
     max-width:220px;
     border-radius:12px;
 }
+
+.chat-time{
+    margin-top:4px;
+    font-size:11px;
+    text-align:right;
+    opacity:.75;
+}
+
+.chat-message.me .chat-time{
+    color:#d9ffe3;
+}
+
+.chat-message.other .chat-time{
+    color:#777;
+}
