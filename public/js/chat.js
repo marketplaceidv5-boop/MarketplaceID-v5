@@ -51,17 +51,10 @@ const me = String(msg.from_user_id) === String(userIdSaya);
 
 box.innerHTML += `
 <div class="chat-message ${me ? "me" : "other"}">
-
-    ${msg.image ? `
-        <img class="chat-image" src="${msg.image}">
-    ` : ""}
-
-    ${msg.message ? `
-        <div class="bubble">
-            ${msg.message}
-        </div>
-    ` : ""}
-
+    <div class="bubble">
+        ${msg.image ? `<img class="chat-image" src="${msg.image}"><br>` : ""}
+        ${msg.message || ""}
+    </div>
 </div>
 `;
 
