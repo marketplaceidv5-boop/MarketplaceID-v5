@@ -138,6 +138,33 @@ async function getProduct(id){
 }
 
 /* =========================
+   Tap Seller detail produck
+========================= */
+
+async function getSellerProducts(id){
+
+const result = await db.query(
+`
+SELECT *
+
+FROM products
+
+WHERE
+
+seller_id=$1
+
+AND status='active'
+
+ORDER BY created_at DESC
+`,
+[id]
+);
+
+return result.rows;
+
+}
+
+/* =========================
    MY PRODUCTS
 ========================= */
 

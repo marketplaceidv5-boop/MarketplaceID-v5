@@ -1048,6 +1048,45 @@ success:false
 );
 
 /* =========================
+DETAIL PRODUCK-PROFIL PENJUAL
+========================= */
+
+app.get(
+"/api/seller/:id",
+async(req,res)=>{
+
+try{
+
+const seller=
+await userDB.getSellerProfile(
+req.params.id
+);
+
+const products=
+await productDB.getSellerProducts(
+req.params.id
+);
+
+res.json({
+success:true,
+seller,
+products
+});
+
+}catch(err){
+
+console.log(err);
+
+res.status(500).json({
+success:false
+});
+
+}
+
+}
+);
+
+/* =========================
    MY PRODUCTS
 ========================= */
 

@@ -43,7 +43,18 @@ Rp ${Number(p.price).toLocaleString("id-ID")}
 
 </div>
 
-<div class="seller-card">
+<div
+class="seller-card"
+onclick="openSeller()">
+
+let sellerId=null;
+
+function openSeller(){
+
+location.href=
+"seller.html?id="+sellerId;
+
+}
 
 <img src="${p.avatar}">
 
