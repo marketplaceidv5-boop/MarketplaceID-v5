@@ -53,7 +53,25 @@ box.innerHTML += `
 <div class="chat-message ${me ? "me" : "other"}">
     <div class="bubble">
         ${msg.image ? `<img class="chat-image" src="${msg.image}"><br>` : ""}
-        ${msg.message || ""}
+        ${
+msg.message &&
+msg.message.includes("https://maps.google.com")
+
+?
+
+`<a
+href="${msg.message.replace("📍 ","")}"
+target="_blank">
+
+📍 Bagikan Lokasi
+
+</a>`
+
+:
+
+msg.message || ""
+
+}
     </div>
 </div>
 `;
@@ -123,6 +141,47 @@ document.getElementById("message").value="";
 document.getElementById("image").value="";
 
 loadChat();
+
+}
+
+async function sendLocation(){
+
+if(!navigator.geolocation){
+    alert("Browser tidak mendukung lokasi");
+    return;
+}
+
+navigator.geolocation.getCurrentPosition(async(pos)=>{
+
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+
+    const form = new FormData();
+
+    form.append("toUserId", userId);
+
+    form.append(
+        "message",
+        `📍 https://maps.google.com/?q=${lat},${lng}`
+    );
+
+    await fetch("/api/chat/send",{
+
+        method:"POST",
+
+        credentials:"include",
+
+        body:form
+
+    });
+
+    loadChat();
+
+},()=>{
+
+    alert("Lokasi gagal diambil");
+
+});
 
 }
 
