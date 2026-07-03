@@ -564,6 +564,10 @@ getHomeProducts,
 
 getProduct,
 
+getSellerProfile,
+
+getSellerProducts,
+
 getMyProducts,
 
 updateProduct,

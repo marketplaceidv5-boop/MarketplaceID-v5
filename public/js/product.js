@@ -1,5 +1,11 @@
 const params=new URLSearchParams(location.search);
 
+let sellerId = null;
+
+function openSeller(){
+    location.href = "seller.html?id=" + sellerId;
+}
+
 const productId=params.get("id");
 
 let sellerId = null;
@@ -46,15 +52,6 @@ Rp ${Number(p.price).toLocaleString("id-ID")}
 <div
 class="seller-card"
 onclick="openSeller()">
-
-let sellerId=null;
-
-function openSeller(){
-
-location.href=
-"seller.html?id="+sellerId;
-
-}
 
 <img src="${p.avatar}">
 
