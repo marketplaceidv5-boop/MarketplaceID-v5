@@ -4,8 +4,6 @@
 
 .inbox-tabs{
 
-.inbox-tabs{
-
 display:flex;
 
 background:#f1f5f9;
@@ -15,6 +13,8 @@ padding:4px;
 border-radius:12px;
 
 margin-bottom:15px;
+
+box-shadow:0 2px 8px rgba(0,0,0,.08);
 
 }
 
@@ -34,9 +34,9 @@ font-size:15px;
 
 font-weight:600;
 
-transition:.25s;
-
 cursor:pointer;
+
+transition:.25s;
 
 color:#555;
 
