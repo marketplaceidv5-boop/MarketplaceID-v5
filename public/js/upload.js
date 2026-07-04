@@ -1,30 +1,22 @@
-const imageInput=document.getElementById("images");
+const imageInput = document.getElementById("images");
 
-imageInput.onchange=function(){
+const preview = document.getElementById("previewImages");
 
-const preview=document.getElementById("preview");
+imageInput.addEventListener("change",()=>{
 
 preview.innerHTML="";
 
-[...this.files].forEach(file=>{
+[...imageInput.files].forEach(file=>{
 
 const img=document.createElement("img");
 
 img.src=URL.createObjectURL(file);
 
-img.style.width="100%";
-
-img.style.height="120px";
-
-img.style.objectFit="cover";
-
-img.style.borderRadius="12px";
-
 preview.appendChild(img);
 
 });
 
-};
+});
 
 if(navigator.geolocation){
 

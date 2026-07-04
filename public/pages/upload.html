@@ -33,15 +33,48 @@ content="width=device-width,initial-scale=1.0">
 
 <form id="uploadForm">
 
-<label>Foto Produk</label>
+<label class="section-title">
+
+📷 Foto Produk
+
+</label>
+
+<div
+class="upload-area"
+onclick="document.getElementById('images').click()">
 
 <input
-type="file"
 id="images"
+type="file"
 multiple
-accept="image/*">
+accept="image/*"
+hidden>
 
-<div id="preview" class="grid"></div>
+<div class="upload-icon">
+
+＋
+
+</div>
+
+<h3>
+
+Tambah Foto Produk
+
+</h3>
+
+<p>
+
+PNG • JPG • Maksimal 10 Foto
+
+</p>
+
+</div>
+
+<div
+id="previewImages"
+class="preview-images">
+
+</div>
 
 <label>Judul</label>
 
