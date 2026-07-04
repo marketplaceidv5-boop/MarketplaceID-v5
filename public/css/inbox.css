@@ -4,17 +4,17 @@
 
 .inbox-tabs{
 
+.inbox-tabs{
+
 display:flex;
 
-margin-bottom:15px;
+background:#f1f5f9;
 
-background:#fff;
+padding:4px;
 
 border-radius:12px;
 
-overflow:hidden;
-
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+margin-bottom:15px;
 
 }
 
@@ -22,19 +22,23 @@ box-shadow:0 2px 8px rgba(0,0,0,.08);
 
 flex:1;
 
-padding:14px;
-
 border:none;
 
-background:#fff;
+background:transparent;
+
+padding:12px;
+
+border-radius:10px;
 
 font-size:15px;
 
 font-weight:600;
 
+transition:.25s;
+
 cursor:pointer;
 
-transition:.2s;
+color:#555;
 
 }
 
@@ -43,5 +47,7 @@ transition:.2s;
 background:#16a34a;
 
 color:#fff;
+
+box-shadow:0 2px 8px rgba(22,163,74,.25);
 
 }
