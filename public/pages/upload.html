@@ -39,9 +39,30 @@ content="width=device-width,initial-scale=1.0">
 
 </label>
 
+<div class="photo-upload">
+
 <div
-class="upload-area"
+id="mainPhoto"
+class="main-photo"
 onclick="document.getElementById('images').click()">
+
+<div class="empty-photo">
+
+<div class="camera-icon">📷</div>
+
+<h3>Tekan untuk memilih foto</h3>
+
+<p>PNG • JPG • Maksimal 10 Foto</p>
+
+<div id="photoCounter">
+
+0/10
+
+</div>
+
+</div>
+
+</div>
 
 <input
 id="images"
@@ -50,29 +71,11 @@ multiple
 accept="image/*"
 hidden>
 
-<div class="upload-icon">
-
-＋
-
-</div>
-
-<h3>
-
-Tambah Foto Produk
-
-</h3>
-
-<p>
-
-PNG • JPG • Maksimal 10 Foto
-
-</p>
-
-</div>
-
 <div
-id="previewImages"
-class="preview-images">
+id="thumbList"
+class="thumb-list">
+
+</div>
 
 </div>
 
