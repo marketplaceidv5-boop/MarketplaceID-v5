@@ -1,0 +1,47 @@
+/* =========================
+   INBOX TABS
+========================= */
+
+.inbox-tabs{
+
+display:flex;
+
+margin-bottom:15px;
+
+background:#fff;
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.inbox-tabs button{
+
+flex:1;
+
+padding:14px;
+
+border:none;
+
+background:#fff;
+
+font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.inbox-tabs button.active{
+
+background:#16a34a;
+
+color:#fff;
+
+}

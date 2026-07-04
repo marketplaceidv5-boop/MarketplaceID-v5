@@ -25,6 +25,7 @@ const fs = require("fs-extra");
 const db = require("./database/postgres/db");
 
 const authDB = require("./database/postgres/auth");
+const userDB = require("./database/postgres/users");
 const productDB = require("./database/postgres/products");
 const favoriteDB = require("./database/postgres/favorites");
 const followDB = require("./database/postgres/follows");

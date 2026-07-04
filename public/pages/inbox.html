@@ -9,7 +9,7 @@
 name="viewport"
 content="width=device-width,initial-scale=1.0">
 
-<title>Inbox</title>
+<title>Kotak Masuk</title>
 
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/chat.css">
@@ -27,7 +27,7 @@ content="width=device-width,initial-scale=1.0">
 
 </a>
 
-<h2>Inbox</h2>
+<h2>Kotak Masuk</h2>
 
 <div></div>
 
@@ -37,7 +37,56 @@ content="width=device-width,initial-scale=1.0">
 class="container"
 style="padding-top:75px;padding-bottom:90px;">
 
-<div id="inboxList">
+<div class="inbox-tabs">
+
+<button
+id="tabChat"
+class="active"
+onclick="showChat()">
+
+💬 Pesan
+
+</button>
+
+<button
+id="tabNotif"
+onclick="showNotif()">
+
+🔔 Notifikasi
+
+</button>
+
+</div>
+
+<div id="chatContent">
+
+<div id="inboxList"></div>
+
+</div>
+
+<div
+id="notifContent"
+style="display:none;">
+
+<div id="notificationList">
+
+<div class="card">
+
+<h3>🔔 Notifikasi</h3>
+
+<p>Belum ada notifikasi.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="chatContent">
+
+<div id="inboxList"></div>
+
+</div>
 
 </div>
 
