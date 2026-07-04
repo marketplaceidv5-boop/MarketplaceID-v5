@@ -28,35 +28,115 @@ box.innerHTML="";
 
 result.products.forEach(product=>{
 
+const totalFoto = product.images?.length || 1;
+
 box.innerHTML += `
 
-<div class="card">
+<div class="my-card">
+
+<div class="my-image">
 
 <img src="${product.images?.[0] || '../assets/default/product.png'}">
 
-<h3>${product.title}</h3>
+<div class="status-badge">
 
-<p>Rp ${Number(product.price).toLocaleString("id-ID")}</p>
+● ${product.status.charAt(0).toUpperCase()+product.status.slice(1)}
 
-<p>Status : ${product.status}</p>
+</div>
 
-<button onclick="location.href='product.html?id=${product.id}'">
+<div class="photo-count">
 
-Lihat
+1/${totalFoto}
+
+</div>
+
+</div>
+
+<div class="my-info">
+
+<div class="my-title">
+
+${product.title}
+
+</div>
+
+<div class="my-price">
+
+Rp ${Number(product.price).toLocaleString("id-ID")}
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<b>📂 Kategori</b><br>
+
+${product.category || "-"}
+
+</div>
+
+<div class="info-box">
+
+<b>📍 Lokasi</b><br>
+
+${product.location || "-"}
+
+</div>
+
+<div class="info-box">
+
+<b>👁 Dilihat</b><br>
+
+${product.views || 0} kali
+
+</div>
+
+<div class="info-box">
+
+<b>📅 Diposting</b><br>
+
+${new Date(product.created_at).toLocaleDateString("id-ID")}
+
+</div>
+
+</div>
+
+<div class="action-grid">
+
+<button
+
+class="btn-view"
+
+onclick="location.href='product.html?id=${product.id}'">
+
+👁 Lihat
 
 </button>
 
-<button onclick="editProduct(${product.id})">
+<button
 
-Edit
+class="btn-edit"
+
+onclick="editProduct(${product.id})">
+
+✏️ Edit
+
+</button>
+
+<button
+
+class="btn-delete"
+
+onclick="deleteProduct(${product.id})">
+
+🗑 Hapus
 
 </button>
 
-<button onclick="deleteProduct(${product.id})">
+</div>
 
-Hapus
-
-</button>
+</div>
 
 </div>
 
