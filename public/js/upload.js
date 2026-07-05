@@ -151,6 +151,12 @@ index===selectedIndex
 
 thumb.innerHTML=`
 <img src="${URL.createObjectURL(file)}">
+
+<div class="thumb-remove">
+
+✕
+
+</div>
 `;
 
 thumb.onclick=function(){
