@@ -33,30 +33,28 @@ content="width=device-width,initial-scale=1.0">
 
 <form id="uploadForm">
 
-<div class="photo-wrapper">
+<div class="photo-card">
 
-<h3 class="photo-title">
-📷 Foto Produk
-</h3>
+<h3 class="photo-title">📷 Foto Produk</h3>
 
 <p class="photo-subtitle">
 Tampilkan produkmu dengan foto terbaik
 </p>
 
 <input
-id="images"
 type="file"
-accept="image/*"
+id="images"
 multiple
+accept="image/*"
 hidden>
 
 <div id="photoMain" class="photo-main">
 
 <div
-class="photo-empty"
+class="photo-placeholder"
 onclick="document.getElementById('images').click()">
 
-<div class="photo-plus">+</div>
+<div class="plus-circle">+</div>
 
 <p>Tambah Foto</p>
 
@@ -64,14 +62,14 @@ onclick="document.getElementById('images').click()">
 
 </div>
 
-<div
-id="photoThumbs"
-class="photo-thumbs">
+<div id="photoThumbs" class="photo-thumbs">
 
 </div>
 
 <div class="photo-tip">
-💡 Foto pertama akan menjadi cover produk.
+
+💡 Tips: Foto pertama akan menjadi foto utama yang dilihat pembeli.
+
 </div>
 
 </div>

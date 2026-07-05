@@ -96,17 +96,15 @@ const files = [...imageInput.files];
 
 if(files.length===0){
 
-photoMain.innerHTML=`
-
-<div class="photo-empty"
+photoMain.innerHTML = `
+<div class="photo-placeholder"
 onclick="document.getElementById('images').click()">
 
-<div class="photo-plus">+</div>
+<div class="plus-circle">+</div>
 
 <p>Tambah Foto</p>
 
 </div>
-
 `;
 
 photoThumbs.innerHTML="";
@@ -117,28 +115,25 @@ return;
 
 const main=files[selectedIndex];
 
-photoMain.innerHTML=`
-
+photoMain.innerHTML = `
 <img
-class="main-image"
 src="${URL.createObjectURL(main)}">
 
-<div class="main-overlay">
+<div class="photo-overlay">
 
-<div class="main-badge">
+<div class="photo-badge">
 
 ⭐ Foto Utama
 
 </div>
 
-<div class="main-counter">
+<div class="photo-count">
 
 ${selectedIndex+1}/${files.length}
 
 </div>
 
 </div>
-
 `;
 
 photoThumbs.innerHTML="";
@@ -147,7 +142,12 @@ files.forEach((file,index)=>{
 
 const thumb=document.createElement("div");
 
-thumb.className="thumb-item";
+thumb.className =
+index===selectedIndex
+?
+"thumb-item active"
+:
+"thumb-item";
 
 thumb.innerHTML=`
 <img src="${URL.createObjectURL(file)}">
