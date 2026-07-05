@@ -1,110 +1,17 @@
 const imageInput = document.getElementById("images");
 
-const mainPhoto = document.getElementById("mainPhoto");
-const thumbList = document.getElementById("thumbList");
-
-const preview = document.getElementById("previewImages");
+const photoMain = document.getElementById("photoMain");
+const photoThumbs = document.getElementById("photoThumbs");
 
 let selectedIndex = 0;
 
-imageInput.addEventListener("change",()=>{
+imageInput.onchange = function(){
 
 selectedIndex = 0;
 
-renderPreview();
-
-});
-
-function renderPreview(){
-
-const files = [...imageInput.files];
-
-if(files.length===0){
-
-mainPhoto.innerHTML=`
-<div class="empty-photo">
-<div class="camera-icon">📷</div>
-<h3>Tekan untuk memilih foto</h3>
-<p>PNG • JPG • Maksimal 10 Foto</p>
-<div id="photoCounter">0/10</div>
-</div>
-`;
-
-thumbList.innerHTML="";
-
-return;
-
-}
-
-const main = files[selectedIndex];
-
-mainPhoto.innerHTML=`
-
-<img
-class="main-photo-image"
-src="${URL.createObjectURL(main)}">
-
-<div class="main-photo-info">
-
-<span class="main-badge">
-
-🟢 Foto Utama
-
-</span>
-
-<span class="photo-total">
-
-${selectedIndex+1}/${files.length}
-
-</span>
-
-</div>
-
-`;
-
-thumbList.innerHTML="";
-
-files.forEach((file,index)=>{
-
-const item=document.createElement("div");
-
-item.className="thumb-item";
-
-item.innerHTML=`
-<img src="${URL.createObjectURL(file)}">
-`;
-
-item.onclick=function(){
-
-selectedIndex=index;
-
-renderPreview();
+renderPhotos();
 
 };
-
-thumbList.appendChild(item);
-
-});
-
-if(files.length<10){
-
-const add=document.createElement("div");
-
-add.className="thumb-add";
-
-add.innerHTML="+";
-
-add.onclick=function(){
-
-imageInput.click();
-
-};
-
-thumbList.appendChild(add);
-
-}
-
-}
 
 if(navigator.geolocation){
 
@@ -180,5 +87,100 @@ async function uploadProduct(){
     alert(err.message);
 
   }
+
+}
+
+function renderPhotos(){
+
+const files = [...imageInput.files];
+
+if(files.length===0){
+
+photoMain.innerHTML=`
+
+<div class="photo-empty"
+onclick="document.getElementById('images').click()">
+
+<div class="photo-plus">+</div>
+
+<p>Tambah Foto</p>
+
+</div>
+
+`;
+
+photoThumbs.innerHTML="";
+
+return;
+
+}
+
+const main=files[selectedIndex];
+
+photoMain.innerHTML=`
+
+<img
+class="main-image"
+src="${URL.createObjectURL(main)}">
+
+<div class="main-overlay">
+
+<div class="main-badge">
+
+⭐ Foto Utama
+
+</div>
+
+<div class="main-counter">
+
+${selectedIndex+1}/${files.length}
+
+</div>
+
+</div>
+
+`;
+
+photoThumbs.innerHTML="";
+
+files.forEach((file,index)=>{
+
+const thumb=document.createElement("div");
+
+thumb.className="thumb-item";
+
+thumb.innerHTML=`
+<img src="${URL.createObjectURL(file)}">
+`;
+
+thumb.onclick=function(){
+
+selectedIndex=index;
+
+renderPhotos();
+
+};
+
+photoThumbs.appendChild(thumb);
+
+});
+
+if(files.length<10){
+
+const add=document.createElement("div");
+
+add.className="thumb-add";
+
+add.innerHTML="+";
+
+add.onclick=function(){
+
+imageInput.click();
+
+};
+
+photoThumbs.appendChild(add);
+
+}
 
 }

@@ -33,48 +33,45 @@ content="width=device-width,initial-scale=1.0">
 
 <form id="uploadForm">
 
-<label class="section-title">
+<div class="photo-wrapper">
 
+<h3 class="photo-title">
 📷 Foto Produk
+</h3>
 
-</label>
-
-<div class="photo-upload">
-
-<div
-id="mainPhoto"
-class="main-photo"
-onclick="document.getElementById('images').click()">
-
-<div class="empty-photo">
-
-<div class="camera-icon">📷</div>
-
-<h3>Tekan untuk memilih foto</h3>
-
-<p>PNG • JPG • Maksimal 10 Foto</p>
-
-<div id="photoCounter">
-
-0/10
-
-</div>
-
-</div>
-
-</div>
+<p class="photo-subtitle">
+Tampilkan produkmu dengan foto terbaik
+</p>
 
 <input
 id="images"
 type="file"
-multiple
 accept="image/*"
+multiple
 hidden>
 
-<div
-id="thumbList"
-class="thumb-list">
+<div id="photoMain" class="photo-main">
 
+<div
+class="photo-empty"
+onclick="document.getElementById('images').click()">
+
+<div class="photo-plus">+</div>
+
+<p>Tambah Foto</p>
+
+</div>
+
+</div>
+
+<div
+id="photoThumbs"
+class="photo-thumbs">
+
+</div>
+
+<div class="photo-tip">
+💡 Foto pertama akan menjadi cover produk.
 </div>
 
 </div>
