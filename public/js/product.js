@@ -2,6 +2,8 @@ const params=new URLSearchParams(location.search);
 
 let sellerId = null;
 
+let currentImage = 0;
+
 function openSeller(){
     location.href = "seller.html?id=" + sellerId;
 }
@@ -21,13 +23,34 @@ return;
 
 const p=result.product;
 
+const images = p.images || [];
+
 sellerId = p.seller_id;
 
 document.getElementById("product").innerHTML=`
 
+<div class="gallery">
+
 <img
+id="mainImage"
 class="product-image"
 src="${p.images[0]}">
+
+<div
+id="imageCounter"
+class="image-counter">
+
+1/${p.images.length}
+
+</div>
+
+</div>
+
+<div
+id="imageThumbs"
+class="image-thumbs">
+
+</div>
 
 <div class="product-title">
 
@@ -99,7 +122,51 @@ onclick="chatSeller()">
 
 `;
 
+`;
+
+// Membuat thumbnail
+const thumbs = document.getElementById("imageThumbs");
+
+thumbs.innerHTML = "";
+
+images.forEach((img,index)=>{
+
+const item = document.createElement("img");
+
+item.src = img;
+
+item.className = "image-thumb";
+
+if(index===0){
+
+item.classList.add("active");
+
+}
+
+item.onclick = function(){
+
+currentImage = index;
+
+document.getElementById("mainImage").src = img;
+
+document.getElementById("imageCounter").innerText =
+(index+1)+"/"+images.length;
+
+document
+.querySelectorAll(".image-thumb")
+.forEach(t=>t.classList.remove("active"));
+
+item.classList.add("active");
+
+};
+
+thumbs.appendChild(item);
+
+});
+
 loadRelated();
+
+}
 
 }
 
