@@ -85,17 +85,13 @@ color:#444;
 
 .photo-thumbs{
 
-display:flex;
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
 
 gap:12px;
 
-overflow-x:auto;
-
-overflow-y:hidden;
-
-padding-bottom:5px;
-
-scrollbar-width:none;
+margin-top:18px;
 
 }
 
@@ -174,23 +170,23 @@ font-weight:bold;
 
 .thumb-item{
 
-width:82px;
+position:relative;
 
-height:82px;
+width:100%;
 
-flex:0 0 82px;
+aspect-ratio:1/1;
 
 border-radius:16px;
 
 overflow:hidden;
 
-cursor:pointer;
-
 border:3px solid transparent;
 
-transition:.2s;
-
 background:#eee;
+
+cursor:pointer;
+
+transition:.25s;
 
 }
 
@@ -216,11 +212,9 @@ object-fit:cover;
 
 .thumb-add{
 
-width:82px;
+width:100%;
 
-height:82px;
-
-flex:0 0 82px;
+aspect-ratio:1/1;
 
 border-radius:16px;
 
@@ -232,7 +226,7 @@ align-items:center;
 
 justify-content:center;
 
-font-size:42px;
+font-size:40px;
 
 font-weight:bold;
 

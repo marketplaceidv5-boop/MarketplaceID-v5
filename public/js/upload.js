@@ -5,11 +5,23 @@ const photoThumbs = document.getElementById("photoThumbs");
 
 let selectedIndex = 0;
 
-imageInput.onchange = function(){
+let productImages = [];
 
-selectedIndex = 0;
+imageInput.onchange=function(){
+
+const newFiles=[...this.files];
+
+productImages.push(...newFiles);
+
+if(productImages.length>10){
+
+productImages=productImages.slice(0,10);
+
+}
 
 renderPhotos();
+
+this.value="";
 
 };
 
@@ -44,7 +56,7 @@ async function uploadProduct(){
   form.append("latitude", document.getElementById("latitude").value);
   form.append("longitude", document.getElementById("longitude").value);
 
-  const files = imageInput.files;
+  const files = productImages;
 
   for(let i=0;i<files.length;i++){
     form.append("images", files[i]);
@@ -92,7 +104,7 @@ async function uploadProduct(){
 
 function renderPhotos(){
 
-const files = [...imageInput.files];
+const files=productImages;
 
 if(files.length===0){
 
@@ -136,28 +148,45 @@ ${selectedIndex+1}/${files.length}
 </div>
 `;
 
-photoThumbs.innerHTML="";
+photoThumbs.innerHTML = "";
 
+// tampilkan semua foto
 files.forEach((file,index)=>{
 
 const thumb=document.createElement("div");
 
-thumb.className =
-index===selectedIndex
-?
-"thumb-item active"
-:
-"thumb-item";
+thumb.className="thumb-item";
+
+if(index===selectedIndex){
+
+thumb.classList.add("active");
+
+}
 
 thumb.innerHTML=`
 <img src="${URL.createObjectURL(file)}">
-
-<div class="thumb-remove">
-
-✕
-
-</div>
+<div class="thumb-remove">×</div>
 `;
+
+thumb.querySelector(".thumb-remove").onclick=function(e){
+
+e.stopPropagation();
+
+productImages.splice(index,1);
+
+if(productImages.length===0){
+
+selectedIndex=0;
+
+}else if(selectedIndex>=productImages.length){
+
+selectedIndex=productImages.length-1;
+
+}
+
+renderPhotos();
+
+};
 
 thumb.onclick=function(){
 
@@ -171,7 +200,8 @@ photoThumbs.appendChild(thumb);
 
 });
 
-if(files.length<10){
+// isi slot kosong sampai 10
+for(let i=files.length;i<10;i++){
 
 const add=document.createElement("div");
 
