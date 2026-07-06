@@ -122,8 +122,6 @@ onclick="chatSeller()">
 
 `;
 
-`;
-
 // Membuat thumbnail
 const thumbs = document.getElementById("imageThumbs");
 
@@ -165,8 +163,6 @@ thumbs.appendChild(item);
 });
 
 loadRelated();
-
-}
 
 }
 
