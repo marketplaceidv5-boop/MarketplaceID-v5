@@ -131,8 +131,6 @@ onclick="location.href='product.html?id=${product.id}'">
 
 </button>
 
-<button
-
 class="btn-edit"
 
 onclick="editProduct(${product.id})">
@@ -159,6 +157,8 @@ disabled>
 ✔ Sudah Terjual
 
 </button>
+
+`}
 
 <button
 
