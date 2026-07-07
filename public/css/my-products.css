@@ -185,3 +185,25 @@ font-weight:bold;
 cursor:pointer;
 
 }
+
+.my-thumbs{
+display:flex;
+gap:10px;
+padding:12px 16px;
+overflow-x:auto;
+}
+
+.my-thumbs .thumb{
+width:65px;
+height:65px;
+border-radius:12px;
+object-fit:cover;
+border:3px solid transparent;
+cursor:pointer;
+flex:none;
+transition:.2s;
+}
+
+.my-thumbs .thumb.active{
+border-color:#16a34a;
+}
