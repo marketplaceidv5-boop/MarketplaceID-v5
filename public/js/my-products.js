@@ -131,6 +131,7 @@ onclick="location.href='product.html?id=${product.id}'">
 
 </button>
 
+<button
 class="btn-edit"
 
 onclick="editProduct(${product.id})">
@@ -138,8 +139,6 @@ onclick="editProduct(${product.id})">
 ✏️ Edit
 
 </button>
-
-<button
 
 ${product.status==="active" ? `
 <button
