@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" href="/public/css/style.css">
 <link rel="stylesheet" href="/public/css/product.css">
+<link rel="stylesheet" href="/public/css/upload.css">
 </head>
 
 <body>
@@ -17,36 +18,79 @@
 <div></div>
 </div>
 
-<div class="container" style="padding-top:75px">
+<div class="container" style="padding-top:75px;padding-bottom:90px;">
 
-<input id="title" placeholder="Judul">
+<div class="photo-card">
+
+<h3 class="photo-title">📷 Foto Produk</h3>
+
+<p class="photo-subtitle">
+Ubah foto produkmu
+</p>
+
+<input
+type="file"
+id="images"
+multiple
+accept="image/*"
+hidden>
+
+<div id="photoMain" class="photo-main"></div>
+
+<div id="photoThumbs" class="photo-thumbs"></div>
+
+<div class="photo-tip">
+💡 Tambahkan, hapus, atau ubah urutan foto produk.
+</div>
+
+</div>
+
+<label>Judul</label>
+
+<input
+id="title"
+placeholder="Masukkan judul produk">
+
+<label>Deskripsi</label>
 
 <textarea
 id="description"
-placeholder="Deskripsi">
-</textarea>
+rows="5"
+placeholder="Deskripsi produk"></textarea>
+
+<label>Kategori</label>
+
+<select id="category">
+
+<option>Elektronik</option>
+<option>Motor</option>
+<option>Mobil</option>
+<option>Fashion</option>
+<option>Gaming</option>
+<option>Rumah</option>
+<option>Lainnya</option>
+
+</select>
+
+<label>Harga</label>
 
 <input
 id="price"
 type="number"
-placeholder="Harga">
+placeholder="Harga jual">
+
+<label>Harga Coret</label>
 
 <input
 id="oldPrice"
 type="number"
-placeholder="Harga Coret">
+placeholder="Opsional">
+
+<label>Lokasi</label>
 
 <input
 id="location"
 placeholder="Lokasi">
-
-<label>Foto Baru (Opsional)</label>
-
-<input
-id="images"
-type="file"
-accept="image/*"
-multiple>
 
 <button
 class="btn"
