@@ -42,7 +42,7 @@ src="${product.images?.[0] || '../assets/default/product.png'}">
 
 <div class="status-badge">
 
-● ${product.status.charAt(0).toUpperCase()+product.status.slice(1)}
+${product.status==="sold" ? "✅ Terjual" : "🟢 Active"}
 
 </div>
 
@@ -143,6 +143,25 @@ onclick="editProduct(${product.id})">
 
 <button
 
+${product.status==="active" ? `
+<button
+class="btn-sold"
+onclick="markSold(${product.id})">
+
+✅ Terjual
+
+</button>
+` : `
+<button
+class="btn-sold"
+disabled>
+
+✔ Sudah Terjual
+
+</button>
+
+<button
+
 class="btn-delete"
 
 onclick="deleteProduct(${product.id})">
@@ -183,6 +202,26 @@ loadProducts();
 }else{
 
 alert(result.message||"Gagal menghapus");
+
+}
+
+}
+
+async function markSold(id){
+
+if(!confirm("Tandai produk ini sebagai TERJUAL?")) return;
+
+const result = await PUT("/products/"+id+"/sold",{});
+
+if(result.success){
+
+alert("Produk berhasil ditandai sebagai terjual");
+
+loadProducts();
+
+}else{
+
+alert(result.message || "Gagal");
 
 }
 

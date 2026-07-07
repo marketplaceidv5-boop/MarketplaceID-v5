@@ -207,3 +207,21 @@ transition:.2s;
 .my-thumbs .thumb.active{
 border-color:#16a34a;
 }
+
+.btn-sold{
+
+background:#f59e0b;
+color:#fff;
+border:none;
+border-radius:14px;
+padding:12px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.btn-sold:hover{
+
+background:#d97706;
+
+}
