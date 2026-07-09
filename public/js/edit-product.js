@@ -4,6 +4,13 @@ const imageInput = document.getElementById("images");
 const photoMain = document.getElementById("photoMain");
 const photoThumbs = document.getElementById("photoThumbs");
 
+const title = document.getElementById("title");
+const description = document.getElementById("description");
+const category = document.getElementById("category");
+const price = document.getElementById("price");
+const oldPrice = document.getElementById("oldPrice");
+const locationInput = document.getElementById("location");
+
 let productImages = [];
 let selectedIndex = 0;
 
@@ -46,14 +53,13 @@ description.value = p.description || "";
 category.value = p.category || "Lainnya";
 price.value = p.price || "";
 oldPrice.value = p.old_price || "";
-location.value = p.location || "";
+locationInput.value = p.location || "";
 
 }
 
 async function saveProduct(){
 
-console.log("INPUT LOCATION =", document.getElementById("location").value);
-console.log("VAR LOCATION =", location.value);
+console.log("Location Input =", locationInput.value);
 
 const data = {
 
@@ -62,7 +68,7 @@ description: description.value,
 category: category.value,
 price: price.value,
 oldPrice: oldPrice.value,
-location: location.value
+location: locationInput.value
 
 };
 
