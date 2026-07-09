@@ -52,6 +52,9 @@ location.value = p.location || "";
 
 async function saveProduct(){
 
+console.log("INPUT LOCATION =", document.getElementById("location").value);
+console.log("VAR LOCATION =", location.value);
+
 const data = {
 
 title: title.value,
