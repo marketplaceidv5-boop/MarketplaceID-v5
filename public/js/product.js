@@ -118,9 +118,56 @@ onclick="chatSeller()">
 
 </button>
 
+<button
+class="btn-offer"
+onclick="openOfferModal()">
+
+💰 Tawar Harga
+
+</button>
+
 </div>
 
 `;
+
+document.body.insertAdjacentHTML("beforeend",`
+
+<div id="offerModal" class="offer-modal" style="display:none;">
+
+<div class="offer-box">
+
+<h3>💰 Tawar Harga</h3>
+
+<input
+id="offerPrice"
+type="number"
+placeholder="Masukkan harga">
+
+<textarea
+id="offerMessage"
+placeholder="Pesan (opsional)"></textarea>
+
+<div class="offer-buttons">
+
+<button onclick="sendOffer()">
+
+Kirim
+
+</button>
+
+<button onclick="closeOfferModal()">
+
+Batal
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`);
 
 // Membuat thumbnail
 const thumbs = document.getElementById("imageThumbs");
@@ -266,3 +313,55 @@ location.href =
 }
 
 loadProduct();
+
+function openOfferModal(){
+
+document.getElementById("offerModal").style.display="flex";
+
+}
+
+function closeOfferModal(){
+
+document.getElementById("offerModal").style.display="none";
+
+}
+
+async function sendOffer(){
+
+const price=document.getElementById("offerPrice").value;
+
+const message=document.getElementById("offerMessage").value;
+
+if(!price){
+
+alert("Masukkan harga tawaran");
+
+return;
+
+}
+
+const result=await POST("/offers",{
+
+productId,
+
+sellerId,
+
+price,
+
+message
+
+});
+
+if(result.success){
+
+alert("Penawaran berhasil dikirim");
+
+closeOfferModal();
+
+}else{
+
+alert(result.message||"Gagal mengirim penawaran");
+
+}
+
+}

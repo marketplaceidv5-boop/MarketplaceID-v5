@@ -2614,7 +2614,9 @@ buyerId:req.session.userId,
 
 sellerId:req.body.sellerId,
 
-price:req.body.price
+price:req.body.price,
+
+message:req.body.message
 
 });
 
@@ -2810,6 +2812,144 @@ req.session.userId
 res.json({
 
 success:true
+
+});
+
+}catch(err){
+
+console.log(err);
+
+res.status(500).json({
+
+success:false
+
+});
+
+}
+
+}
+);
+
+/* =========================
+   Counter Offer
+========================= */
+
+app.put(
+"/api/offers/:id/counter",
+requireLogin,
+async(req,res)=>{
+
+try{
+
+const offer = await offerDB.getOffer(req.params.id);
+
+if(!offer){
+
+return res.status(404).json({
+success:false
+});
+
+}
+
+let sender="buyer";
+
+if(Number(req.session.userId)===Number(offer.seller_id)){
+
+sender="seller";
+
+}
+
+const result=await offerDB.counterOffer(
+
+req.params.id,
+req.body.price,
+req.body.message,
+sender
+
+);
+
+res.json({
+
+success:true,
+offer:result
+
+});
+
+}catch(err){
+
+console.log(err);
+
+res.status(500).json({
+
+success:false
+
+});
+
+}
+
+}
+);
+
+/* =========================
+   Accept Offer
+========================= */
+
+app.put(
+"/api/offers/:id/accept",
+requireLogin,
+async(req,res)=>{
+
+try{
+
+const result=
+await offerDB.updateOfferStatus(
+req.params.id,
+"accepted"
+);
+
+res.json({
+
+success:true,
+offer:result
+
+});
+
+}catch(err){
+
+console.log(err);
+
+res.status(500).json({
+
+success:false
+
+});
+
+}
+
+}
+);
+
+/* =========================
+   Reject Offer
+========================= */
+
+app.put(
+"/api/offers/:id/reject",
+requireLogin,
+async(req,res)=>{
+
+try{
+
+const result=
+await offerDB.updateOfferStatus(
+req.params.id,
+"rejected"
+);
+
+res.json({
+
+success:true,
+offer:result
 
 });
 

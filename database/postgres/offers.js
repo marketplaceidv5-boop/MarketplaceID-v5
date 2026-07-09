@@ -14,17 +14,21 @@ async function createOffer(data){
       buyer_id,
       seller_id,
       price,
-      status
+      message,
+      last_sender,
+      status,
+      updated_at
     )
     VALUES
-    ($1,$2,$3,$4,'pending')
+    ($1,$2,$3,$4,$5,'buyer','pending',NOW())
     RETURNING *
     `,
     [
       data.productId,
       data.buyerId,
       data.sellerId,
-      Number(data.price)
+      Number(data.price),
+      data.message || ""
     ]
   );
 
@@ -173,6 +177,40 @@ async function updateOfferStatus(id,status){
 }
 
 /* =========================
+   COUNTER OFFER
+========================= */
+
+async function counterOffer(id, price, message, sender){
+
+  const result = await db.query(
+    `
+    UPDATE offers
+
+    SET
+
+      price=$1,
+      message=$2,
+      last_sender=$3,
+      status='pending',
+      updated_at=NOW()
+
+    WHERE id=$4
+
+    RETURNING *
+    `,
+    [
+      Number(price),
+      message || "",
+      sender,
+      id
+    ]
+  );
+
+  return result.rows[0];
+
+}
+
+/* =========================
    DELETE OFFER
 ========================= */
 
@@ -195,6 +233,42 @@ async function deleteOffer(id,userId){
     [
       id,
       userId
+    ]
+  );
+
+  return result.rows[0];
+
+}
+
+/* =========================
+   REPLY OFFER
+========================= */
+
+async function replyOffer(id,data){
+
+  const result = await db.query(
+    `
+    UPDATE offers
+
+    SET
+
+      price=$1,
+
+      message=$2,
+
+      last_sender=$3,
+
+      updated_at=NOW()
+
+    WHERE id=$4
+
+    RETURNING *
+    `,
+    [
+      Number(data.price),
+      data.message || "",
+      data.lastSender,
+      id
     ]
   );
 
@@ -274,6 +348,10 @@ module.exports = {
   getSellerOffers,
 
   updateOfferStatus,
+
+  replyOffer,
+
+  counterOffer,
 
   deleteOffer,
 
