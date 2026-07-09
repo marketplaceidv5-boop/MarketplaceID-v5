@@ -2636,6 +2636,28 @@ message:"Seseorang menawar produk Anda"
 
 });
 
+await chatDB.sendMessage({
+
+  productId:req.body.productId,
+
+  fromUserId:req.session.userId,
+
+  toUserId:req.body.sellerId,
+
+  message:
+    "[OFFER]" +
+    JSON.stringify({
+
+      offerId:offer.id,
+
+      price:req.body.price,
+
+      message:req.body.message || ""
+
+    })
+
+});
+
 res.json({
 
 success:true,
