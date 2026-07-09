@@ -120,28 +120,29 @@ async function getSellerOffers(userId){
 
   const result = await db.query(
     `
+
     SELECT
 
-      o.*,
+  o.*,
 
-      p.title,
-      p.images,
-      p.price,
+  p.title,
+  p.images,
+  p.price AS original_price,
 
-      u.username AS buyer_name,
-      u.avatar AS buyer_avatar
+  u.username AS buyer_name,
+  u.avatar AS buyer_avatar
 
-    FROM offers o
+FROM offers o
 
-    JOIN products p
-      ON p.id=o.product_id
+JOIN products p
+  ON p.id=o.product_id
 
-    JOIN users u
-      ON u.id=o.buyer_id
+JOIN users u
+  ON u.id=o.buyer_id
 
-    WHERE o.seller_id=$1
+WHERE o.seller_id=$1
 
-    ORDER BY o.created_at DESC
+ORDER BY o.created_at DESC
     `,
     [userId]
   );
