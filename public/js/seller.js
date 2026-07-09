@@ -13,7 +13,10 @@ return;
 
 }
 
-const seller=result.seller;
+console.log(result);
+
+const seller = result.seller;
+const products = result.products || [];
 
 document.getElementById("sellerAvatar").src=seller.avatar;
 
@@ -41,17 +44,14 @@ seller.verified
 
 "";
 
-document.getElementById("sellerProducts").innerHTML=
+document.getElementById("sellerProducts").innerHTML =
+products.length;
 
-seller.productCount;
+document.getElementById("sellerSold").innerHTML =
+0;
 
-document.getElementById("sellerSold").innerHTML=
-
-seller.soldCount;
-
-document.getElementById("sellerRating").innerHTML=
-
-seller.rating+"⭐";
+document.getElementById("sellerRating").innerHTML =
+"0⭐";
 
 const box=
 
@@ -63,7 +63,7 @@ document.getElementById(
 
 box.innerHTML="";
 
-seller.products.forEach(product=>{
+products.forEach(product=>{
 
 box.innerHTML+=`
 
